@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream jobs</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      border: border-box;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      /* max-width: 100%; */
+    }
+
+    body {
+      background-color: #f2f2f2;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #f2f2f2;
+      height: 60px;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1020;
+      /* cursor: pointer; */
+    }
+
+    .first {
+      display: flex;
+    }
+
+    .logo {
+      background-image: url("{% load  static'tdreamjobs-high-resolution-logo (4).png'%}");
+      height: 50px;
+      width: 70px;
+      background-size: cover;
+      border-radius: 20%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+      margin-left: 50px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 45px;
+    }
+
+    .nav-items ul {
+      display: flex;
+    }
+
+    .nav-items ul li a {
+      text-decoration: none;
+      color: #2f3539;
+      font-size: 18px;
+    }
+
+    .nav-items ul li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 8px 10px;
+      position: relative;
+    }
+
+    .nav-items ul li::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      /* background-color: #f44336; */
+      background-color: #6a5ae6;
+      display: block;
+      margin: auto;
+      transition: 0.5s;
+    }
+
+    .nav-items ul li:hover::after {
+      width: 100%;
+    }
+
+    /* #name{
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 10px;
+} */
+
+    .login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 50px;
+    }
+
+    .first-login {
+      margin-right: 20px;
+      border: none;
+      background: white;
+      border: 1px solid black;
+      padding: 12px 25px;
+      border-radius: 30px;
+      /* color: black; */
+      font-weight: bold;
+      /* font-size: 13px; */
+      transition: .4s;
+    }
+
+    .first-login a {
+      text-decoration: none;
+      color: #2f3539;
+    }
+
+    .second-sinup {
+      margin-right: 20px;
+      border: none;
+      background: #6a5ae6;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      /* font-size: 13px; */
+      transition: .4s;
+    }
+
+    .third-employer {
+      /* margin-right: 20px; */
+      border: none;
+      /* background: rgb(135, 123, 243); */
+      /* border: 1px solid black; */
+      padding: 12px 25px;
+      border-radius: 10px;
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      /* font-size: 13px; */
+      /* transition: .4s; */
+    }
+
+
+    .dropdown {
+      display: none;
+    }
+
+    .login ul li:hover .dropdown {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: #f0f1f2;
+
+    }
+
+    .login ul li:hover .dropdown ul {
+      display: block;
+      margin: 20px;
+    }
+
+
+    .dropdown ul li {
+      list-style-type: none;
+      width: 100px;
+      padding: 10px;
+    }
+
+    .login ul li {
+      position: relative;
+      list-style-type: none;
+    }
+
+    .login ul li::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      /* background-color: #f44336; */
+      background-color: #6a5ae6;
+      display: block;
+      margin: auto;
+      transition: 0.5s;
+    }
+
+    .login ul li:hover::after {
+      width: 80%;
+    }
+
+
+
+    .first-login:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .second-sinup:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .third-employer:hover {
+      cursor: pointer;
+    }
+
+    /* hero section */
+
+    .text-box {
+      width: 90%;
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      transform: translate(-50%, -150%);
+    }
+
+    .text-box h1 {
+      font-size: 40px;
+    }
+
+    .text-box p {
+      margin: 10px 0 40px;
+      font-size: 14px;
+    }
+
+    .hero {
+      height: 420px;
+      width: 100%;
+      background-color: #d6d6d6;
+    }
+
+    .search-bar {
+      height: 60px;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: white;
+      width: 890px;
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      /* justify-content: center; */
+      transform: translate(-50%, -80%);
+      border: none;
+      /* border: 1px solid black; */
+      border-radius: 6px;
+    }
+
+    .search-jobs {
+      width: 100%;
+      font-size: 20px;
+
+      /* border-radius: 6px; */
+      /* border: 1px solid black; */
+      /* border-right: 1px solid black; */
+      border: none;
+      /* margin-right: 10px; */
+    }
+
+    .search-jobs:hover {
+      border: 1px solid black;
+    }
+
+    .search-location {
+      margin-left: 20px;
+      width: 610px;
+      font-size: 20px;
+      /* border-radius: 6px; */
+      /* border: 2px solid black; */
+      border: none;
+      align-items: center;
+    }
+
+    .line {
+      border: 1px solid rgb(192, 186, 186);
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .search-location:hover {
+      border: 1px solid black;
+    }
+
+    .search-button {
+      border: none;
+      background: #6a5ae6;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+
+      /* font-size: 13px; */
+      /* transition: .4s; */
+    }
+
+    .search-button:hover {
+      cursor: pointer;
+    }
+
+    .icon {
+      display: flex;
+      width: 120px;
+      /* background: white; */
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    .button-color {
+      /* background-color: #d6d6d6; */
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 5px;
+    }
+
+    /* jobs section */
+
+    .top-jobs {
+      height: 45px;
+      background-color: #f2f2f2;
+      display: flex;
+      font-size: 20px;
+      /* padding-left: 190px; */
+      align-items: center;
+      justify-content: center;
+    }
+
+    .jobs-section {
+      background-color: #f2f2f2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      /* background-color: white; */
+      width: 80%;
+      margin-left: 150px;
+    }
+
+    .box {
+      margin-top: 10px;
+      margin-right: 10px;
+      width: 270px;
+      height: 90px;
+      background-color: #fff;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      border: 1px solid rgb(142, 142, 142);
+      padding: 8px;
+    }
+
+    .image {
+      width: 60px;
+      height: 60px;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgb(145, 145, 145);
+    }
+
+    .content h2 {
+      font-size: 20px;
+    }
+
+    .content p {
+      font-size: 20px;
+    }
+
+    .first-block {
+      padding: 5px;
+    }
+
+    .second-block {
+      margin-left: 30px;
+    }
+
+    .section-content1 {
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      max-width: 60%;
+      margin-top: 50px;
+      /* background-color: #e5e9eb; */
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .paras1 {
+      padding: 0px 70px;
+      font-size: 20px;
+    }
+
+    .text-big {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .content-image1 {
+      width: 490px;
+      height: 200px;
+      background-size: cover;
+      border-radius: 10px;
+      margin-right: 30px;
+    }
+
+    .section-content2 {
+      height: 280px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-evenly;
+      max-width: 60%;
+      margin-top: 50px;
+      /* background-color: #e5e9eb; */
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .paras1 {
+      padding: 0px 70px;
+      font-size: 20px;
+    }
+
+    .text-big {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .content-image2 {
+      width: 400px;
+      height: 200px;
+      background-size: cover;
+      border-radius: 10px;
+      margin-right: 30px;
+    }
+
+    .foot-panel1 {
+      /* color: #2f3539; */
+      color: black;
+      /* font-weight: 23; */
+      height: 210px;
+      width: 100%;
+      /* border: none; */
+      background-color: #c9c6c6;
+      display: flex;
+      justify-content: center;
+      /* padding: 10px; */
+      margin-top: 90px;
+    }
+
+    .foot-panel1 ul {
+      margin-top: 30px;
+      margin-right: 20px;
+    }
+
+    .foot-panel1 ul li {
+      list-style-type: none;
+    }
+
+    .foot-panel1 ul a {
+      margin-top: 5px;
+      display: block;
+      text-decoration: none;
+      color: #2f3539;
+      /* color: black; */
+      font-size: 14px;
+    }
+
+    .social-icons i {
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+
+    .foot-panel3 {
+      height: 60px;
+      background-color: #f3efef;
+      color: balck;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="first">
+        <div class="logo"></div>
+
+        <div class="nav-items">
+          <ul>
+            <li><a href="#">Post a Job</a></li>
+            <li><a href="#">Browse Jobs</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+                       
+      <div class="login">
+        <div><button class="first-login"><a href="{%url 'loginn'%}">Login</a></button></div>
+        <div><button class="second-sinup"><a href="{%url 'signinn'%}">SignUp</a></button></div>
+
+        <ul>
+          <li>
+            <button class="third-employer">For Employer <i class="fa-solid fa-caret-down"></i></button>
+
+            <div class="dropdown">
+              <ul>
+                <li>Login</li>
+                <li>SignUp</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="text-box">
+    <h1>Find your dream job now</h1>
+    <p>Aim Higher and Search Smarter</p>
+  </div>
+
+  <div class="hero"></div>
+
+  <div class="search-bar">
+    <div class="icon">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <input type="text" name="name" placeholder="Enter jobs, keywords or companies" id="name" class="search-jobs">
+
+    <div class="line"></div>
+
+    <input type="text" name="name" placeholder="Enter location" id="name" class="search-location">
+    <div class="button-color">
+      <button class="search-button">Search</button>
+    </div>
+  </div>
+  <div class="top-jobs">
+    <div class="star">
+      <i class="fa-regular fa-star"></i>
+    </div>
+    <p>Top jobs</p>
+  </div>
+
+  <div class="jobs-section">
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/images/g');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Greencodes</h2>
+          <ul>
+            <li>PHP developer</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/medi.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Medi International</h2>
+          <ul>
+            <li>Graphic Designer</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/logpoint.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Logpoint Nepal</h2>
+          <ul>
+            <li>Account Assistant</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/merojob.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Merojob</h2>
+          <ul>
+            <li>Client Relation Executive(Sales)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/sarawagi.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Sarawagi Rugs</h2>
+          <ul>
+            <li>Human resource Manager</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/cedargate.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Cedar Gate Services</h2>
+          <ul>
+            <li>IT Engineer</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/millsberry.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Millsberry School</h2>
+          <ul>
+            <li>HR Manager</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div class="first-block">
+        <div class="image" style="background-image: url('templates/microbiz.jpg');"></div>
+      </div>
+
+      <div class="second-block">
+        <div class="content">
+          <h2>Micro Biz</h2>
+          <ul>
+            <li>Accountant</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="section-content1">
+
+    <div class="paras1">
+
+      <p class="text-big">Find the right fit!</p>
+      <p class="text-small">
+        Apply with one tap.
+        Say goodbye to long applications. Upload your resume and apply for jobs faster!</p>
+    </div>
+
+    <div class="content-image1" style="background-image: url('jason-goodman-Oalh2MojUuk-unsplash.jpg');">
+
+
+    </div>
+  </section>
+
+  <section class="section-content2">
+
+    <div class="paras1">
+
+      <p class="text-big">Sign Up to Get Job Alerts
+      </p>
+      <p class="text-small">
+        Our powerful matching technology will send job matches right to your inbox.
+      </p>
+    </div>
+
+    <div class="content-image2" style="background-image: url('glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg');">
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-panel1">
+      <ul>
+        <p>FOR JOBSEEKER</p>
+        <a href="#">Register</a>
+        <a href="#">Search Jobs</a>
+        <a href="#">Login</a>
+        <a href="#">Blog</a>
+      </ul>
+
+      <ul>
+        <p>FOR EMPLOYER</p>
+        <a href="#">Post a Job</a>
+        <a href="#">Register</a>
+        <a href="#">Login</a>
+        <a href="#">Recruitment Services</a>
+        <a href="#">HR Insider</a>
+      </ul>
+
+      <ul>
+        <p>ABOUT US </p>
+        <a href="#">About Dreamjobs</a>
+      </ul>
+
+      <ul>
+        <p>CONTACT US</p>
+
+        <a href="#"><i class="fa-solid fa-location-dot"></i> Shanti Bhawan Maitighar, Kathmandu, Nepal</a>
+        <a href="#"><i class="fa-solid fa-tty"></i> +977 1 4764500</a>
+        <a href="#"><i class="fa-solid fa-envelope"></i> info@dreamjob.com</a>
+
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </ul>
+
+    </div>
+
+    <div class="foot-panel3">
+      <div class="copyright">
+        ©2024 Dreamjobs Pvt. Ltd. All Right Reserved.
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>
