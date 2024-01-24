@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,413 +6,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream jobs</title>
-    <!-- <link rel="stylesheet" href="sinup.css"> -->
+    <link rel="stylesheet" href="{% static 'home1/sinup.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+        
 
-}
-
-body {
-    background-color: #d6d6d6;
-
-}
-
-.navbar {
-    display: flex;
-    background-color: #f2f2f2;
-    height: 60px;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
-
-.first {
-    display: flex;
-}
-
-.logo {
-    background-image: url("images/dreamjobs-high-resolution-logo (4).png");
-    height: 50px;
-    width: 70px;
-    background-size: cover;
-    border-radius: 20%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5px;
-    margin-left: 50px;
-}
-
-.nav-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 45px;
-}
-
-.nav-items ul {
-    display: flex;
-}
-
-.nav-items ul li a {
-    text-decoration: none;
-    color: #2f3539;
-    font-size: 18px;
-}
-
-.nav-items ul li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 8px 10px;
-    position: relative;
-}
-
-.nav-items ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background-color: #6a5ae6;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.nav-items ul li:hover::after {
-    width: 100%;
-}
-
-.login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 50px;
-}
-
-.first-login {
-    margin-right: 20px;
-    border: none;
-    background: white;
-    border: 1px solid black;
-    padding: 12px 25px;
-    border-radius: 30px;
-    color: black;
-    font-weight: bold;
-    transition: .4s;
-}
-
-.second-sinup {
-    margin-right: 20px;
-    border: none;
-    background: #6a5ae6;
-    padding: 12px 25px;
-    border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    transition: .4s;
-}
-
-.third-employer {
-    border: none;
-    padding: 12px 25px;
-    border-radius: 10px;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-
-.dropdown {
-    display: none;
-}
-
-.login ul li:hover .dropdown {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #f0f1f2;
-
-}
-
-.login ul li:hover .dropdown ul {
-    display: block;
-    margin: 20px;
-}
-
-
-.dropdown ul li {
-    list-style-type: none;
-    width: 100px;
-    padding: 10px;
-}
-
-.login ul li {
-    position: relative;
-    list-style-type: none;
-}
-
-.login ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    /* background-color: #f44336; */
-    background-color: #6a5ae6;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.login ul li:hover::after {
-    width: 80%;
-}
-
-.first-login:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.second-sinup:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.container {
-    width: 440px;
-    height: 580px;
-    margin: auto;
-    margin-top: 90px;
-    background-color: #fff;
-    padding: 27px 29px;
-    border-radius: 13px;
-    display: flex;
-    justify-content: center;
-    border: none;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 800%;
-    align-items: center;
-}
-
-.form h2 {
-    font-size: 30px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 13px;
-    color: #24365E;
-}
-
-.names{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.firstname{
-    padding: 12px;
-    font-size: 16px;
-    width: 48%;
-    margin: 10px 0;
-    outline: none;
-    border: 1px solid #333;
-    border-radius: 6px;
-    height: 53px;
-}
-
-.lastname{
-    padding: 12px;
-    font-size: 16px;
-    width: 48%;
-    margin: 10px 0;
-    outline: none;
-    border: 1px solid #333;
-    border-radius: 6px;
-    height: 53px;
-}
-
-.box1 {
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
-    margin: 10px 0;
-    outline: none;
-    border: 1px solid #333;
-    border-radius: 6px;
-    height: 53px;
-}
-
-.box2 {
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
-    margin: 10px 0;
-    outline: none;
-    border: 1px solid #333;
-    border-radius: 6px;
-    height: 53px;
-    margin-bottom: 10px;
-}
-
-.box3 {
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 10px;
-    outline: none;
-    border: 1px solid #333;
-    border-radius: 6px;
-    height: 53px;
-    margin-bottom: 10px;
-}
-
-/* .submit{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 6px;
-    width: 100%;
-    height: 44px;
-    margin-top: 20px;
-    background-color: red;
-    font-weight: bold;
-    font-size: 18px;
-} */
-
-.submit{
-    height: 50px;
-    width: 100%;
-    /* margin-top: 10px; */
-    background-color: #6a5ae6;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    border-radius: 6px;
-}
-
-.submit:hover {
-    cursor: pointer;
-    background-color: #8b7ef4;
-}
-
-.social-text1 {
-    margin-top: 20px;
-    max-width: 500Px;
-    text-align: center;
-    position: relative;
-}
-
-.social-text1:before {
-    content: "";
-    width: 150px;
-    height: 1px;
-    display: block;
-    background: rgb(206, 206, 206);
-    position: absolute;
-    top: 50%;
-    left: -153px;
-}
-
-.social-text1::after {
-    content: "";
-    width: 150px;
-    height: 1px;
-    display: block;
-    background: rgb(206, 206, 206);
-    position: absolute;
-    top: 50%;
-    left: 25px;
-}
-
-.social-text2 {
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-.social-media {
-    width: 30%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
-}
-
-.social-media a {
-    text-decoration: none;
-    color: rgb(44, 82, 129);
-    font-size: 23px;
-    width: 30%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
-}
-  </style>
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="first">
-                <div class="logo"></div>
-
-                <div class="nav-items">
-                    <ul>
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">Browse Jobs</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="login">
-                <div><button class="first-login"><a href="login.html">Login</a></button></div>
-                <div><button class="second-sinup">Sign Up</button></div>
-                <ul>
-                    <li>
-                        <button class="third-employer">For Employer <i class="fa-solid fa-caret-down"></i></button>
-
-                        <div class="dropdown">
-                            <ul>
-                                <li>Login</li>
-                                <li>Sign Up</li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
+   
     <div class="container">
 
-        <form action="" class="form">
+        <form action="" method="post"  class="form">
+            {% csrf_token %}
 
             <h2>Sign Up</h2>
-<div class="names">
-            <input type="firstname" name="firstname" class="firstname" placeholder="First Name">
 
-            <input type="lastname" name="lastname" class="lastname" placeholder="Last Name">
+                <div class="names">
+            <input type="firstname" name="firstname" id="firstname"class="firstname" placeholder="First Name" required>
+
+            <input type="lastname" name="lastname" id="lastname" class="lastname" placeholder="Last Name" required>
+
+            <input type="username" name="username" id="username" class="firstname" placeholder="User Name" required>
         </div>
 
-            <input type="email" name="email" class="box1" placeholder="Email address">
+            <input type="email" name="semail" class="box1" id="semail" placeholder="Email Address" required>
 
-            <input type="password" name="password" class="box2" placeholder="Password">
+            <input type="password" name="spassword1" id="spassword1" class="box2" placeholder="Choose Your Password" required>
 
-            <input type="password" name="password" class="box3" placeholder="Confirm Password">
+            <input type="password" name="spassword2" id="spassword2"  class="box3" placeholder="Confirm Password" required>
 
             <button type="submit" class="submit">Sign Up</button>
+
+            <a href="{% url 'loginn' %}">Already have a Account</a>
+
+        
+
 
             <p class="social-text1">OR</p>
        
