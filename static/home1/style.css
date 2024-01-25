@@ -29,7 +29,7 @@ body{
 }
 
 .logo {
-  background-image: url( '..home1/images/dreamjobs-high-resolution-logo(4).png' );
+  background-image: url( '../home1/images/dreamjobs-high-resolution-logo(4).png' );
   height: 50px;
   width: 70px;
   background-size: cover;
@@ -106,6 +106,24 @@ body{
 }
 
 .first-login a{
+  text-decoration: none;
+  color: #2f3539;
+}
+
+.first-logout {
+  margin-right: 20px;
+  border: none;
+  background: white;
+  border: 1px solid black;
+  padding: 12px 25px;
+  border-radius: 30px;
+  /* color: black; */
+  font-weight: bold;
+  /* font-size: 13px; */
+  transition: .4s;
+}
+
+.first-logout a{
   text-decoration: none;
   color: #2f3539;
 }
@@ -346,7 +364,7 @@ body{
   align-items: center;
   border: 1px solid rgb(142, 142, 142);
   padding: 8px;
-  background-image: url( '..home1/images/greencodes.png' )
+  background-image: url('')
 }
 
 .image {
@@ -356,15 +374,71 @@ body{
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(145, 145, 145);
-  background-image: url( '..home1/images/medi.jpg' );
-  background-image: url( 'home1/images/logpoint.jpg' );
-  background-image: url( '..home1/images/merojob.jpg' );
-  background-image: url( '..home1/images/sarawagi.jpg' );
-  background-image: url( '..home1/images/cedargate.jpg' );
-  background-image: url( '..home1/images/millsberry.jpg' );
-  background-image: url( '..home1/images/microbiz.jpg' );
+  
+  background-image: url( '../home1/images/microbiz.jpg' );
 
 }
+.image-logpoint{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/logpoint.jpg' );
+}
+
+.image-merojob{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/merojob.jpg' );
+}
+.image-Sarawagi{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/sarawagi.jpg' );
+
+}
+.image-Cedar{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/cedargate.jpg' );
+}
+.image-Millsberry{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/millsberry.jpg' );
+
+}
+.image-Micro{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/microbiz.jpg' );
+
+}
+
+
+
 
 .content h2 {
   font-size: 20px;
@@ -411,7 +485,7 @@ body{
   background-size: cover;
   border-radius: 10px;
   margin-right: 30px;
-  background-image: url( '..home1/images/jason-goodman-Oalh2MojUuk-unsplash.jpg' );
+  background-image: url( '../home1/images/jason-goodman-Oalh2MojUuk-unsplash.jpg' );
 }
 
 .section-content2{
@@ -444,7 +518,7 @@ body{
   background-size: cover;
   border-radius: 10px;
   margin-right: 30px;
-  background-image: url( '..home1/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg' );
+  background-image: url( '../home1/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg' );
   
 }
 

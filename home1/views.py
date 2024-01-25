@@ -8,13 +8,13 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
-# Create your views here.
+
 
 @login_required(login_url='loginn')
 def home(request):
   
-  return render(request,'index.html')
-    #  return HttpResponse("hey this is ritesh kafle")
+  return render(request,'index/index.html')
+    
 
 
     
@@ -38,7 +38,7 @@ def signinn(request):
     firstname=request.POST.get('firstname')
     lastname=request.POST.get('lastname')
     username=request.POST.get('username')
-    semail=request.POST.get('semail')
+   #  semail=request.POST.get('semail')
     spassword1=request.POST.get('spassword1')
     spassword2=request.POST.get('spassword2')
 
@@ -48,7 +48,7 @@ def signinn(request):
     elif User.objects.filter(username=username ).exists():
      return HttpResponse("username already exist")
     else:
-      my_user=User.objects.create_user(username,semail,spassword1)
+      my_user=User.objects.create_user(username,spassword1)
       my_user.first_name=firstname
       my_user.last_name=lastname
       my_user.save()
@@ -56,7 +56,7 @@ def signinn(request):
     return HttpResponse('Account has been Created Successfully')
     
 
-    # print(firstname,lastname,username,email,password1,password2)
+
 
   return render(request,'base/signup.html')
 
@@ -87,12 +87,13 @@ def apply(request):
    if request.method=="POST":
       email=request.POST.get('applyemail')
 
-      user=User.objects.create_user(email)
+      hiuser=User.objects.create_user(email)
+      hiuser.save()
 
-      subject=""
-      message=""
+      subject="Appyling for job"
+      message="Thank you for apply for this job mero vai"
       from_email=settings.EMAIL_HOST_USER
-      recipient_list=user.email
+      recipient_list=[hiuser.email]
       send_mail(subject,message,from_email,recipient_list)
 
    return render(request,'index/index3.html')
