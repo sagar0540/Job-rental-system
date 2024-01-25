@@ -214,6 +214,7 @@ body {
 }
 
 .logo-greencodes{
+  background-image: url("../home1/images/greencodes.png");
   width: 60px;
   height: 60px;
   background-size: cover;

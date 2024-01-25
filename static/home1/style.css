@@ -29,7 +29,7 @@ body{
 }
 
 .logo {
-  background-image: url( '../home1/images/dreamjobs-high-resolution-logo(4).png' );
+  background-image: url("../home1/images/logo.png");
   height: 50px;
   width: 70px;
   background-size: cover;
