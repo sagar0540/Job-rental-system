@@ -28,7 +28,7 @@ body {
 }
 
 .logo {
-  background-image: url("../home1/images/logo.png");
+  background-image: url("../home1/images/jobszone2.png");
   height: 50px;
   width: 70px;
   background-size: cover;
@@ -38,6 +38,7 @@ body {
   margin-top: 5px;
   margin-left: 50px;
 }
+
 
 .nav-items {
   display: flex;
@@ -215,6 +216,7 @@ body {
 
 .logo-greencodes{
   background-image: url("../home1/images/greencodes.png");
+  
   width: 60px;
   height: 60px;
   background-size: cover;
@@ -429,6 +431,56 @@ hr{
       justify-content: center;
       align-items: center;
       border: 1px solid rgb(145, 145, 145);
+      background-image: url('../home1/images/axissoftware.jpg');
+}
+.logo-aulogic{
+  width: 60px;
+      height: 60px;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgb(145, 145, 145);
+      background-image: url('../home1/images/aayulogic.jpg');
+
+}
+.logo-gtech {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/greencodes.png');
+
+}
+.logo-sabkura{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/sabkura.jpg');
+
+}
+.logo-unicorn{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/unicorn.jpg');
+}
+.logo-ghargharma{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/ghargharma.jpg');
+
 }
 
 .btn-seemore{

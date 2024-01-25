@@ -11,6 +11,7 @@ urlpatterns = [
     path('inside/',views.inside,name="inside"),
     path('inside1/',views.inside1,name="inside1"),
     path('apply/',views.apply,name="apply"),
+    path('submit/',views.submit,name="submit")
 ]
 
 

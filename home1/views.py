@@ -90,19 +90,11 @@ def logoutt(request):
 
 @login_required(login_url='loginn')
 def apply(request):
-   if request.method=="POST":
-      email=request.POST.get('applyemail')
-
-      hiuser=User.objects.create_user(email)
-      
-
-      subject="Appyling for job"
-      message="Thank you for apply for this job mero vai"
-      from_email=settings.EMAIL_HOST_USER
-      recipient_list=[hiuser.email]
-      send_mail(subject,message,from_email,recipient_list)
-
+   
    return render(request,'index/index3.html')
+
+def submit(request):
+   return HttpResponse('Thank you We will reach you soon')
    
 
 

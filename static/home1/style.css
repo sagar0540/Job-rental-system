@@ -29,7 +29,7 @@ body{
 }
 
 .logo {
-  background-image: url("../home1/images/logo.png");
+  background-image: url("../home1/images/jobszone2.png");
   height: 50px;
   width: 70px;
   background-size: cover;
@@ -376,8 +376,27 @@ body{
   border: 1px solid rgb(145, 145, 145);
   
   background-image: url( '../home1/images/microbiz.jpg' );
+}
+.image-green{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/greencodes.png' );
 
 }
+.image-medi{
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(145, 145, 145);
+  background-image: url('../home1/images/medi.jpg' );
+}
+
 .image-logpoint{
   width: 60px;
   height: 60px;
