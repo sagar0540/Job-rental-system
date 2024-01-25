@@ -1,13 +1,16 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
-# from django.contrib import messages
+from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from .models import Job_information,Job_information1
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Create your views here.
 
-
+@login_required(login_url='loginn')
 def home(request):
   
   return render(request,'index.html')
@@ -57,6 +60,44 @@ def signinn(request):
 
   return render(request,'base/signup.html')
 
+@login_required(login_url='loginn')
+# greencodes
+def inside(request):
+   jobgarana=Job_information1.objects.all()
+   context1={'jobgarana':jobgarana}
+   
+   return render(request,'index/index1.html',context1)
+
+
+
+@login_required(login_url='loginn')
+# cedargrate
+def inside1(request):
+   jobgara=Job_information.objects.all()
+   context={'jobgara':jobgara}
+   return render(request,'index/index2.html',context)
+
+def logoutt(request):
+   logout(request)
+   return render(request,'base/login.html')
+
+
+@login_required(login_url='loginn')
+def apply(request):
+   if request.method=="POST":
+      email=request.POST.get('applyemail')
+
+      user=User.objects.create_user(email)
+
+      subject=""
+      message=""
+      from_email=settings.EMAIL_HOST_USER
+      recipient_list=user.email
+      send_mail(subject,message,from_email,recipient_list)
+
+   return render(request,'index/index3.html')
+   
+
 
 
 
@@ -73,9 +114,7 @@ def signinn(request):
 
 
 
-  # else :
-  #   return HttpResponse('Error 404')
-
+  
 
 
 

@@ -28,7 +28,7 @@ body {
 }
 
 .logo {
-  background-image: url("{% static 'home1/images/dreamjobs-high-resolution-logo(4).png' %}");
+  background-image: url( '..home1/images/dreamjobs-high-resolution-logo(4).png' );
   height: 50px;
   width: 70px;
   background-size: cover;

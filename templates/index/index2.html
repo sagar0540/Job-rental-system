@@ -1,0 +1,401 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Engineer</title>
+    <link rel="stylesheet" href="{% static 'home1/cedargate.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="first">
+                <a href="index.html"><div class="logo">  </div></a>
+
+                <div class="nav-items">
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Browse Jobs</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+    </header>
+
+    <div class="big-container">
+        <div class="bothinone">
+            <div class="first-container">
+                <div class="name-logo">
+                    <div class="php-developer">
+                        <div class="php">
+                            IT Engineer
+                        </div>
+                        <p class="company-name">Cedar Gate Services</p>
+                    </div>
+
+                    <div class="logo-greencodes" style="background-image: url('images/cedargate.jpg')"></div>
+                </div>
+
+
+
+                <div class="content1">
+                    Cedar Gate Services Pvt. Ltd, Nepal, provides software research & development, data analytics, IT infrastructure management and various support services for Cedar Gate Technologies, USA. 
+                </div>
+
+                <div class="content2">
+                    Apply Before: 6 days, 1 hour from now
+                </div>
+
+            </div>
+
+            <div class="second-container">
+                <div class="job-information">
+                    <p class="job-info">
+                        Basic Job Information
+                    </p>
+                    {% for jobgaraa in jobgara %}
+
+
+                    <table class="table-data">
+                        <tr>
+                            <td>Job Category </td>
+                            <td>:</td>
+                            <td>{{jobgaraa.Job_Category}}</td>
+                        </tr>
+                        <tr>
+                            <td>Job Level </td>
+                            <td>:</td>
+                            <td>{{jobgaraa.Job_Level}}</td>
+                        </tr>
+                        <tr>
+                            <td>No. of Vacancy/s </td>
+                            <td>:</td>
+                            <td>[ {{jobgaraa.Job_Vacanys}} ]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Employment Type </td>
+                            <td>:</td>
+                            <td>{{jobgaraa.Job_Type}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Job Location </td>
+                            <td>:</td>
+                            <td>Lalitpur, Nepal
+
+                            </td>
+                        </tr>
+                        <hr>
+                        <tr>
+                            <td> Offered Salary </td>
+                            <td>:</td>
+                            <td>
+                                {{jobgaraa.Job_Salary}}
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Apply Before(Deadline) </td>
+                            <td>:</td>
+                            <td>{{jobgaraa.Job_Deadline}}
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Education Level </td>
+                            <td>:</td>
+                            <td>{{jobgaraa.Job_Educationlevel}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Experience Required </td>
+                            <td>:</td>
+                            <td>{{jobgaraa.Job_Experience}}
+                            </td>
+                        </tr>
+                    </table>
+                    {% endfor %}
+                </div>
+
+                <div class="job-description">
+                    <hr>
+                    <p>Job Description
+                    </p>
+                    <hr>
+                    <div class="description">
+                        Cedar Gate Services is looking for an IT Engineer to work in the Infrastructure Department to provide rapid and useful technical assistance.
+
+                    </div>
+                </div>
+
+                <div class="job-summary">
+                    <hr>
+                    <p>Job Summary
+                    </p>
+                    <hr>
+                    <div class="summary">
+                        The IT Engineer will respond to inquiries regarding technical issues and resolve them. A competent IT Engineer must have good technical knowledge and the ability to communicate effectively to understand a problem and articulate its solution. The candidate must also demonstrate a customer-oriented approach and patience in handling challenging user interactions.
+                    </div>
+                </div>
+
+                <div class="job-responsibilities">
+                    <hr>
+                    <p>Job Responsibilities
+                    </p>
+                    <hr>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Provide first-line technical support to end-users via tickets, email, or in-person interactions.
+                            </li>
+                            <li>Utilize ticketing systems, such as JIRA, to log, track, and prioritize support requests.
+
+                            </li>
+                            <li>Provide assistance to users seeking technical support for desktop and application-related issues.
+
+                            </li>
+                            <li>Conduct troubleshooting processes and to identify the root cause through best practice diagnostic techniques, available data, research, and customer input.
+
+                            </li>
+                            <li>Research and implement IT security and processes.
+
+                            </li>
+                            <li>Develop familiarity with IT asset management systems to track and manage hardware and software inventory.
+
+                            </li>
+                            <li>Develop and update processes and procedures, and effectively communicate technical materials and documentation.
+                            </li>
+                            <li>Grant least privilege access to resources upon formal request from supervisors.
+                            </li>
+                            <li>Undertake other duties and projects as assigned by management.
+                            </li>
+                            <li>Automate the day-to-day Infrastructure IT tasks.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="job-specification">
+                    <hr>
+                    <p>Job Specification</p>
+                    <hr>
+                    <div class="specification">
+                        <ul>
+                            <li>Bachelor’s Degree in Information Technology, Computer Science, or a related field (or equivalent work experience)
+
+                            </li>
+                            <li>Minimum 2 years of experience in MS Office 365 and Active Directory
+
+                            </li>
+                            <li>Proven experience in an IT or technical support role
+
+                            </li>
+                            <li>Strong knowledge of Windows, Linux, and Mac operating systems
+
+                            </li>
+                            <li>Experience using ticketing systems, such as JIRA, for incident tracking and resolution.
+
+                            </li>
+                            <li>Knowledge of IT asset management systems
+
+                            </li>
+                            <li>Experience with monitoring and management tools such as Tanium, Absolute, and Observium is a plus.
+                            </li>
+                            <li>Proficient in scripting and automation using Shell and Python
+                            </li>
+                            <li>Basic knowledge of cloud providers (AWS, GCP, Azure, etc.)
+                            </li>
+                            <li>Ability to multitask and problem-solve.
+                            </li>
+                            <li>Sound English proficiency skills
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                <div class="button">
+                    <button class="btn">Apply now</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="side-panel">
+
+
+
+            <div class="similar-jobs">
+                Similar jobs
+            </div>
+            <hr>
+
+            <div class="block1">
+                <div class="programmar">
+                    <div class="axis-logo" style="background-image: url('images/axissoftware.jpg');">
+
+                    </div>
+                    <div class="php-programmar">
+                        <h2>PHP Programmar</h2>
+
+                        <p>Axis Software Solutions</p>
+                        <p>Deadline: 5 days from now
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block1">
+                <div class="programmar">
+                    <div class="axis-logo" style="background-image: url('images/aayulogic.jpg');">
+                    </div>
+                    <div class="php-programmar">
+                        <h2>Python/Django Developer</h2>
+
+                        <p>Aayulogic</p>
+                        <p>Deadline: 11 days from now
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block1">
+                <div class="programmar">
+                    <div class="axis-logo" style="background-image: url('images/gtech-vision.jpg');">
+                    </div>
+                    <div class="php-programmar">
+                        <h2>PHP/Laravel + Jquery Programmar</h2>
+
+                        <p>Gtech Vision</p>
+                        <p>Deadline: 3 days from now
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block1">
+                <div class="programmar">
+                    <div class="axis-logo" style="background-image: url('images/sabkura.jpg');">
+                    </div>
+                    <div class="php-programmar">
+                        <h2>React JS Developer</h2>
+
+                        <p>SabKura</p>
+                        <p>Deadline: 7 days from now
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block1">
+                <div class="programmar">
+                    <div class="axis-logo" style="background-image: url('images/unicorn.jpg');">
+                    </div>
+                    <div class="php-programmar">
+                        <h2>Frontend Developer (React.js)</h2>
+
+                        <p>Unicorn Consultants Limited</p>
+                        <p>Deadline: 7 days from now
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="block1">
+                <div class="programmar">
+                    <div class="axis-logo" style="background-image: url('images/ghargharma.jpg');">
+                    </div>
+                    <div class="php-programmar">
+                        <h2>
+                            Senior Laravel developer</h2>
+
+                        <p>Ghargharma Doctor</p>
+                        <p>Deadline: 9 days from now
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <button class="btn-seemore">View all</button>
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <div class="foot-panel1">
+            <ul>
+                <p>FOR JOBSEEKER</p>
+                <a href="#">Register</a>
+                <a href="#">Search Jobs</a>
+                <a href="#">Login</a>
+                <a href="#">Blog</a>
+            </ul>
+
+            <ul>
+                <p>FOR EMPLOYER</p>
+                <a href="#">Post a Job</a>
+                <a href="#">Register</a>
+                <a href="#">Login</a>
+                <a href="#">Recruitment Services</a>
+                <a href="#">HR Insider</a>
+            </ul>
+
+            <ul>
+                <p>ABOUT US </p>
+                <a href="#">About Dreamjobs</a>
+            </ul>
+
+            <ul>
+                <p>CONTACT US</p>
+
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Shanti Bhawan Maitighar, Kathmandu, Nepal</a>
+                <a href="#"><i class="fa-solid fa-tty"></i> +977 1 4764500</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i> info@dreamjob.com</a>
+
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </ul>
+
+        </div>
+
+        <div class="foot-panel3">
+            <div class="copyright">
+                ©2024 Dreamjobs Pvt. Ltd. All Right Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
