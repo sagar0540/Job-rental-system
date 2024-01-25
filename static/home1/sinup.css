@@ -240,6 +240,17 @@ body {
 
 
 }
+.email{
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #333;
+  border-radius: 6px;
+  height: 53px;
+
+}
 
 .box1 {
   padding: 12px;

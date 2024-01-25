@@ -19,18 +19,23 @@ def home(request):
 
     
 def loginn(request):
-    if request.method == 'POST':
-        hemail = request.POST.get('username')
-        hpassword = request.POST.get('lpassword')
-        user = authenticate(request, username=hemail, password=hpassword)
+      if request.method == 'POST':
+        
+         lusername = request.POST.get('lusername')
+         lpassword = request.POST.get('lpassword')
+         user = authenticate(request, username=lusername, password=lpassword)
 
-        if user is not None:
+         if user is not None:
             login(request, user)
             return render(request,'index/index.html')
-        else:
-            return render(request, 'base/login.html', {'error_message': 'Incorrect Username/Password'})
-
-    return render(request, 'base/login.html')
+        
+         else:
+            return render(request, 'base/login.html',)
+      
+         
+      
+      
+      return render(request, 'base/login.html')
 
 def signinn(request):
   if request.method =='POST' :
@@ -38,7 +43,8 @@ def signinn(request):
     firstname=request.POST.get('firstname')
     lastname=request.POST.get('lastname')
     username=request.POST.get('username')
-   #  semail=request.POST.get('semail')
+    semail=request.POST.get('email')
+   
     spassword1=request.POST.get('spassword1')
     spassword2=request.POST.get('spassword2')
 
@@ -48,7 +54,7 @@ def signinn(request):
     elif User.objects.filter(username=username ).exists():
      return HttpResponse("username already exist")
     else:
-      my_user=User.objects.create_user(username,spassword1)
+      my_user=User.objects.create_user(username,semail,spassword1)
       my_user.first_name=firstname
       my_user.last_name=lastname
       my_user.save()
@@ -88,7 +94,7 @@ def apply(request):
       email=request.POST.get('applyemail')
 
       hiuser=User.objects.create_user(email)
-      hiuser.save()
+      
 
       subject="Appyling for job"
       message="Thank you for apply for this job mero vai"
