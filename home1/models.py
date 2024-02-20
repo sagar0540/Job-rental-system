@@ -73,6 +73,7 @@ class contactus(models.Model):
 
 
 class Jobshow(models.Model):
+    
     Job_Title=models.CharField(max_length=100)
 
     Job_Description=models.CharField(max_length=100)

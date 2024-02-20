@@ -53,7 +53,7 @@ def contact(request):
                       message=cmessage)
          
          sf.save()
-         print(cname,cemail,cmessage)
+         # print(cname,cemail,cmessage)
          
 
 
@@ -127,7 +127,7 @@ def inside1(request):
 def inside2(request):
    jobdekhaus=Jobshow.objects.all()
    # print(jobdekhaus)
-   context2={'jobdekhau':jobdekhaus}
+   context2={'jobdekhaus':jobdekhaus}
    return render(request,'index/jobs.html',context2)
 
 
