@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 # cedargate
 class Job_information(models.Model):
   Job_Category=models.CharField(max_length=100)
@@ -22,8 +21,7 @@ class Job_information(models.Model):
 
   Job_Experience=models.CharField(max_length=100)
 
-  def __str__(self):
-    return self.Job_Category
+  
   
 # greencodes
 class Job_information1(models.Model):
@@ -33,7 +31,7 @@ class Job_information1(models.Model):
 
   Job_Type1=models.CharField(max_length=100)
 
-  Job_Location1=models.CharField(max_length=100,)
+  Job_Location1=models.CharField(max_length=100)
 
   Job_Vacanys1=models.IntegerField()
 
@@ -46,8 +44,43 @@ class Job_information1(models.Model):
   Job_Experience1=models.CharField(max_length=100)
   Job_Skills1=models.CharField(max_length=100)
 
-  def __str__(self):
-    return self.Job_Category1
+
+  #jobshow
+
+
+
+
+# class save_form(models.Model):
+#     phone=models.IntegerField()
+
+#     state=models.CharField(max_length=100)
+
+#     city=models.CharField(max_length=100)
+
+#     zipcode=models.CharField(max_length=100)
+#     Qualification=models.CharField(max_length=100)
+#     Experience=models.CharField(max_length=100)
+   
+   
+
+class contactus(models.Model):
+    name=models.CharField(max_length=100)
+
+    email=models.CharField(max_length=100)
+
+    message=models.CharField(max_length=500)
+
+
+
+class Jobshow(models.Model):
+    Job_Title=models.CharField(max_length=100)
+
+    Job_Description=models.CharField(max_length=100)
+      
+  
+    
+
+  
   
 
 

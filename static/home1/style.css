@@ -586,3 +586,12 @@ body{
   justify-content: center;
   align-items: center;
 }
+
+.gren{
+  text-decoration: none;
+  
+}
+
+.content h2 a{
+  text-decoration: none;
+}

@@ -6,7 +6,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream jobs</title>
+    <title>Jobszone</title>
     <link rel="stylesheet" href="{% static 'home1/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,15 +23,13 @@
         
         <div class="navbar">
             <div class="first">
-                <div class="logo"></div>
+                <a href="{% url 'home' %}"><div class="logo"></div></a>
 
                 <div class="nav-items">
                     <ul>
-                         
-                        
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">Browse Jobs</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'jobs' %}">Jobs</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,152 +60,6 @@
         <div class="button-color">
             <button class="search-button">Search</button>
         </div>
-    </div>
-    <div class="top-jobs">
-        <div class="star">
-            <i class="fa-regular fa-star"></i>
-        </div>
-        <p>Top jobs</p>
-    </div>
-
-    <div class="jobs-section">
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-green" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2><a href="{% url 'inside' %}">Greencodes</a></h2>
-                    <ul>
-                        <li>PHP developer</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-medi"></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2>Medi International</h2>
-                    <ul>
-                        <li>Graphic Designer</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-logpoint" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2>Logpoint Nepal</h2>
-                    <ul>
-                        <li>Account Assistant</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-merojob" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2>Merojob</h2>
-                    <ul>
-                        <li>Client Relation Executive(Sales)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-Sarawagi" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2>Sarawagi Rugs</h2>
-                    <ul>
-                        <li>Human resource Manager</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-Cedar" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2><a href="{% url 'inside1' %}">Cedar Gate Services</a></h2>
-                    <ul>
-                        <li>IT Engineer</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-Millsberry" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2>Millsberry School</h2>
-                    <ul>
-                        <li>HR Manager</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="box">
-
-            <div class="first-block">
-                <div class="image-Micro" ></div>
-            </div>
-
-            <div class="second-block">
-                <div class="content">
-                    <h2>Micro Biz</h2>
-                    <ul>
-                        <li>Accountant</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <section class="section-content1">
@@ -247,24 +99,15 @@
         <div class="foot-panel1">
             <ul>
                 <p>FOR JOBSEEKER</p>
-                <a href="#">Register</a>
-                <a href="#">Search Jobs</a>
-                <a href="#">Login</a>
-                <a href="#">Blog</a>
+                
+                <a href="#">Jobs</a>
+        
             </ul>
 
-            <ul>
-                <p>FOR EMPLOYER</p>
-                <a href="#">Post a Job</a>
-                <a href="#">Register</a>
-                <a href="#">Login</a>
-                <a href="#">Recruitment Services</a>
-                <a href="#">HR Insider</a>
-            </ul>
 
             <ul>
                 <p>ABOUT US </p>
-                <a href="#">About Dreamjobs</a>
+                <a href="#">Contact Us</a>
             </ul>
 
             <ul>
@@ -274,12 +117,6 @@
                 <a href="#"><i class="fa-solid fa-tty"></i> +977 1 4764500</a>
                 <a href="#"><i class="fa-solid fa-envelope"></i> info@dreamjob.com</a>
 
-                <div class="social-icons">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
             </ul>
 
         </div>

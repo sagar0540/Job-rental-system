@@ -1,0 +1,276 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background-color: #d6d6d6;
+
+}
+
+.navbar {
+    display: flex;
+    background-color: #f2f2f2;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.first {
+    display: flex;
+}
+
+.logo {
+    background-image: url("../home1/images/jobszone2.png");
+    height: 50px;
+    width: 70px;
+    background-size: cover;
+    border-radius: 20%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45px;
+}
+
+.nav-items ul {
+    display: flex;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: #2f3539;
+    font-size: 18px;
+}
+
+.nav-items ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.nav-items ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #6a5ae6;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-items ul li:hover::after {
+    width: 100%;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.first-login {
+    margin-right: 20px;
+    border: none;
+    background: white;
+    border: 1px solid black;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    transition: .4s;
+}
+
+.first-login a{
+    text-decoration: none;
+    /* color: #24365E; */
+    color: #2f3539;
+}
+
+.second-sinup {
+    margin-right: 20px;
+    border: none;
+    background: #6a5ae6;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    transition: .4s;
+}
+
+.second-sinup a{
+    text-decoration: none;
+    color: white;
+}
+
+.third-employer {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    /* color: black; */
+    color: #2f3539;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.dropdown {
+    display: none;
+}
+
+.login ul li:hover .dropdown {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #f0f1f2;
+
+}
+
+.login ul li:hover .dropdown ul {
+    display: block;
+    margin: 20px;
+}
+
+
+.dropdown ul li {
+    list-style-type: none;
+    width: 100px;
+    padding: 10px;
+    color: #2f3539;
+
+}
+
+.login ul li {
+    position: relative;
+    list-style-type: none;
+}
+
+.login ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #6a5ae6;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.login ul li:hover::after {
+    width: 80%;
+}
+
+.first-login:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.second-sinup:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.container {
+    width:800px;
+    height: 470px;
+    margin: auto;
+    margin-top: 85px;
+    background-color: #fff;
+    padding: 27px 29px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 800%;
+    /* align-items: center; */
+}
+
+.form h2 {
+    font-size: 30px;
+    font-weight: 800;
+    /* text-align: left; */
+    margin-bottom: 13px;
+    color: #2f3539;
+}
+
+
+
+.names{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box1 {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 6px;
+    height: 53px;
+}
+
+.box2 {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 6px;
+    height: 53px;
+    margin-bottom: 10px;
+}
+
+.m-box {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 6px;
+
+}
+
+
+
+.submit{
+    color: white;
+    margin-top: 10px;
+    height: 60px;
+    width: 100%;
+    background-color: #6a5ae6;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    padding: 0 30px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #8b7ef4;
+}

@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  /* border: border-box; */
+  border: border-box;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   /* max-width: 100%; */
@@ -9,7 +9,6 @@
 
 body{
   background-color: #d6d6d6;
-  /* background-color: #eef4fe; */
 }
 
 .navbar {
@@ -18,11 +17,34 @@ body{
   height: 60px;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 0;
-  z-index: 100;
+  z-index: 1020;
   /* cursor: pointer; */
+}
+
+.about {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color:#fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about p{
+  margin-top: 10px;
+}
+
+.foot-panel3{
+  margin-top: 180px;
+  height: 60px;
+  background-color: #f3efef;
+  color: balck;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .first {
@@ -30,7 +52,7 @@ body{
 }
 
 .logo {
-  background-image: url( '../home1/images/dreamjobs-high-resolution-logo(4).png' );
+  background-image: url("../home1/images/jobszone2.png");
   height: 50px;
   width: 70px;
   background-size: cover;
@@ -38,8 +60,21 @@ body{
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-  margin-left: 50px;
+  margin-bottom: 5px;
+  margin-left: 70px;
+  /* margin-left: 50px; */
 }
+
+/* .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Bitter', serif;
+  margin-left: 40px;
+  color: #351579;
+} */
 
 .nav-items {
   display: flex;
@@ -100,10 +135,15 @@ body{
   border: 1px solid black;
   padding: 12px 25px;
   border-radius: 30px;
-  color: black;
+  /* color: black; */
   font-weight: bold;
   /* font-size: 13px; */
   transition: .4s;
+}
+
+.first-login a{
+  text-decoration: none;
+  color: #2f3539;
 }
 
 .second-sinup {
@@ -118,6 +158,11 @@ body{
   transition: .4s;
 }
 
+.second-sinup a{
+  text-decoration: none;
+  color: white;
+}
+
 .third-employer {
   /* margin-right: 20px; */
   border: none;
@@ -125,7 +170,9 @@ body{
   /* border: 1px solid black; */
   padding: 12px 25px;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: #2f3539;
+
   font-weight: bold;
   font-size: 14px;
   /* font-size: 13px; */
@@ -156,6 +203,8 @@ body{
   list-style-type: none;
   width: 100px;
   padding: 10px;
+  color: #2f3539;
+
 }
 
 .login ul li{
@@ -178,6 +227,8 @@ body{
   width: 80%;
 }
 
+
+
 .first-login:hover{
   transform: scale(1.05);
   cursor: pointer;
@@ -188,161 +239,40 @@ body{
   cursor: pointer;
 }
 
-.container{
-  max-width: 396px;
-  height: 378px;
-  margin: auto;
-  margin-top: 30px;
-  background-color: #fff;
-  padding: 27px 29px;
-  border-radius: 13px;
-  display: flex;
-  justify-content: center;
-  border: none;
-}
-
-
-.form{
-  display: flex;
-  flex-direction: column;
-  width: 800%;
-  align-items: center;
-}
-
-.form h2{
-  font-size: 30px;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 13px;
-  color: #24365E;
-}
-
-.box1{
-  padding: 12px;
-  font-size: 16px;
-  width: 100%;
-  margin: 10px 0;
-  outline: none;
-  border: 1px solid #333;
-  border-radius: 6px;
-  height: 53px;
-}
-
-.box2{
-  padding: 12px;
-  font-size: 16px;
-  width: 100%;
-  margin-top: 10px;
-  outline: none;
-  border: 1px solid #333;
-  border-radius: 6px;
-  height: 53px;
-}
-
-.forget-password{
-  height: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-top: 5px;
-}
-
-.forget-password a{
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-}
-
-.submit{
-      width: 100%;
-      height: 44px;
-      margin-top: 10px;
-      background-color: #6a5ae6;
-      font-weight: bold;
-      font-size: 18px;
-      border: none;
-      border-radius: 6px;
-}
-
-.submit:hover{
+.third-employer:hover{
   cursor: pointer;
-  background-color: #8b7ef4;
 }
 
+.job-table{
+  width: 70%;
+  /* background-color: red; */
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 100px;
 
+}
+/* 
+.jobs-table{
+  background-color: black;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 50px;
+  width: 70%;
+  height: 100px;
+}
 
-/* .text1{
-  width: 100%;
+tr{
+  background-color: rgb(210, 49, 49);
+  
+}
+
+.jobs-table tr td{
+  color: white;
+}
+
+.table-head{
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: white;
+  margin-top: 20px;
 } */
 
-.social-text1{
-  /* margin-top: 20px;
-  font-size: 16px;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  align-items: center;
-  justify-content: center; */
-  /* width: 50vh; */
-  margin-top: 20px;
-  max-width: 500Px;
-  text-align: center;
-  position: relative;
-}
-
-.social-text1:before{
-  content: "";
-  width: 150px;
-  height: 1px;
-  display: block;
-  background: rgb(206, 206, 206);
-  position: absolute;
-  top: 50%;
-  left: -153px;
-}
-
-.social-text1::after{
-  content: "";
-  width: 150px;
-  height: 1px;
-  display: block;
-  background: rgb(206, 206, 206);
-  position: absolute;
-  top: 50%;
-  left: 25px;
-}
-
-/* .social-text1::before, .social-text1::after{
-  content: "";
-  height: 1px;
-  background-color: #333;
-  display: block;
-
-} */
-
-.social-text2{
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-.social-media{
-  width: 30%;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 10px;
-}
-
-.social-media a{
-  text-decoration: none;
-  color: rgb(44, 82, 129);
-  font-size: 23px;
-  width: 30%;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 10px;
-}

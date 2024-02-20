@@ -199,7 +199,8 @@ body {
   border-radius: 20px;
   padding: 24px;
   margin-top: 100px;
-  margin-left: 180px;
+  /* margin-left: 180px; */
+  margin-left: 130px;
 }
 
 .name-logo{
@@ -225,6 +226,7 @@ body {
   margin-left: 70px;
   border: 1px solid rgb(145, 145, 145);
 }
+
 
 .company-name {
   height: 18px;
@@ -253,7 +255,8 @@ body {
   border-radius: 20px;
   padding: 24px;
   margin-top: 20px;
-  margin-left: 180px;
+  /* margin-left: 180px; */
+  margin-left: 130px;
 }
 
 /* table css */
@@ -384,6 +387,7 @@ td {
   flex-direction: column;
   /* align-items: center; */
 }
+
 hr{
   margin-bottom: 10px;
 }
@@ -425,60 +429,30 @@ hr{
 
 
 .axis-logo{
-      width: 60px;
-      height: 60px;
-      background-size: cover;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgb(145, 145, 145);
-      background-image: url('../home1/images/axissoftware.jpg');
-}
+      
+  background-image: url('../home1/images/axissoftware.jpg');
+} 
 .logo-aulogic{
-  width: 60px;
-      height: 60px;
-      background-size: cover;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgb(145, 145, 145);
+  
       background-image: url('../home1/images/aayulogic.jpg');
 
 }
 .logo-gtech {
-  width: 60px;
-  height: 60px;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(145, 145, 145);
+  
   background-image: url('../home1/images/greencodes.png');
 
 }
 .logo-sabkura{
-  width: 60px;
-  height: 60px;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(145, 145, 145);
+ 
   background-image: url('../home1/images/sabkura.jpg');
 
 }
 .logo-unicorn{
-  width: 60px;
-  height: 60px;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(145, 145, 145);
+  
   background-image: url('../home1/images/unicorn.jpg');
 }
 .logo-ghargharma{
-  width: 60px;
-  height: 60px;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(145, 145, 145);
+  
   background-image: url('../home1/images/ghargharma.jpg');
 
 }
