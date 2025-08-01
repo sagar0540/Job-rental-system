@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-from .models import Job_information,Job_information1,Jobshow,contactus
+from .models import Job_information,Job_information1,addjobs,contactus,save_form
 from django.core.mail import send_mail
 from django.conf import settings
+from django.db.models import Q
 
 
 
@@ -16,28 +17,37 @@ def home(request):
   return render(request,'index/index.html')
 
 
-# def save(request):
-#       if request.method== 'POST':
+def apply(request):
+      if request.method== 'POST':
 
-#          phone = request.POST.get('phone')
-#          state = request.POST.get('state')
-#          city = request.POST.get('city')
-#          zipcode = request.POST.get('zipcode')
-#          qualification = request.POST.get('qualification')
-#          experience = request.POST.get('experience')
+         phone = request.POST.get('phone')
+         state = request.POST.get('state')
+         city = request.POST.get('city')
+         zipcode = request.POST.get('zipcode')
+         qualification = request.POST.get('qualification')
+         experience = request.POST.get('experience')
 
-#          sf=save_form(phone=phone,
-#                       state=state,
-#                       city=city,
-#                       zipcode=zipcode,
-#                       Qualification=qualification,
-#                       Experience=experience)
-#          sf.save()
+         sf=save_form(phone=phone,
+                      state=state,
+                      city=city,
+                      zipcode=zipcode,
+                      Qualification=qualification,
+                      Experience=experience)
+      
+         sf.save()
+         email1 = request.user.email
 
-         
 
+         subject = 'Applying for job'
+         message = 'Thank you for applying for this job. We will reach you soon!'
+         send_mail(
+         subject,
+         message,
+         settings.EMAIL_HOST_USER,
+         [email1],
+         fail_silently=False,)
 
-#       return render(request,'')
+      return render(request,'index/apply.html')
 
 
 
@@ -54,10 +64,8 @@ def contact(request):
          
          sf.save()
          # print(cname,cemail,cmessage)
-         
 
-
-      return render(request,'index/contact.html')  
+      return render(request,'index/contact.html') 
 
 
     
@@ -70,7 +78,7 @@ def loginn(request):
 
       if user is not None:
          login(request, user)
-         return render(request,'index/index.html')
+         return redirect('home')
         
       else:
          return render(request, 'base/login.html')
@@ -91,15 +99,28 @@ def signinn(request):
 
     if spassword1 != spassword2:
             return HttpResponse('password donot match')
+    
     elif User.objects.filter(username=username ).exists():
      return HttpResponse("username already exist")
+    
+    elif User.objects.filter(email=semail ).exists():
+     return HttpResponse("email already exist")
     else:
       my_user=User.objects.create_user(username,semail,spassword1)
       my_user.first_name=firstname
       my_user.last_name=lastname
       my_user.save()
 
-    return HttpResponse('Account has been Created Successfully')
+      subject = 'Welcome to jobszone'
+      message = 'Thank you for signup.'
+      send_mail(
+         subject,
+         message,
+         settings.EMAIL_HOST_USER,
+         [my_user.email],
+         fail_silently=False,)
+
+    return redirect('loginn')
     
 
 
@@ -108,27 +129,29 @@ def signinn(request):
 
 @login_required(login_url='loginn')
 # greencodes
+
+
 def inside(request):
    jobgarana=Job_information1.objects.all()
    context1={'jobgarana':jobgarana}
-   return render(request,'index/index1.html',context1)
+   return render(request,'index/greencodes.html',context1)
 
 
 
 @login_required(login_url='loginn')
-# cedargrate
+# cedargates
 def inside1(request):
    jobgara=Job_information.objects.all()
    context={'jobgara':jobgara}
-   return render(request,'index/index2.html',context)
+   return render(request,'index/cedargates.html',context)
 
 
 
-def inside2(request):
-   jobdekhaus=Jobshow.objects.all()
-   # print(jobdekhaus)
-   context2={'jobdekhaus':jobdekhaus}
-   return render(request,'index/jobs.html',context2)
+# def inside2(request):
+#    jobdekhaus=Jobshow.objects.all()
+#    # print(jobdekhaus)
+#    context2={'jobdekhaus':jobdekhaus}
+#    return render(request,'index/jobs.html',context2)
 
 
 
@@ -142,10 +165,6 @@ def logoutt(request):
    return render(request,'base/login.html')
 
 
-@login_required(login_url='loginn')
-def apply(request):
-   
-   return render(request,'index/index3.html')
 
 
 def submit(request): 
@@ -158,19 +177,22 @@ def about(request):
 @login_required(login_url='loginn')
 
 
-# def contact(request):
-#    return render(request,'index/contact.html')
-
 def jobs(request):
-   return render(request,'index/jobs.html')
-
-
-
-
-
-  
+   if request.method == 'POST':
+      if "search" in request.POST:
+         query = request.POST.get('searchjob')
+         jobdata= addjobs.objects.filter(Q(jname__icontains=query) | Q(jcompany__icontains=query))
+         context1 = {"jobdata": jobdata}
+         return render(request,'index/jobs.html',context1)
 
    
+   else:
+
+      jobdata=addjobs.objects.all()
+   
+      context = {"jobdata": jobdata}
+
+      return render(request,'index/jobs.html',context)
 
     
 

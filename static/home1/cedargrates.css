@@ -39,7 +39,6 @@ body {
   margin-left: 50px;
 }
 
-
 .nav-items {
   display: flex;
   justify-content: center;
@@ -186,6 +185,21 @@ body {
   cursor: pointer;
 }
 
+/* main content part */
+
+
+.first-container {
+  background-color: white;
+  /* background: linear-gradient(180deg,#e7e7f1 .62%,rgba(231,231,241,0) 95.76%); */
+  /* width: 700px; */
+  width: 750px;
+  height: 210px;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 100px;
+  margin-left: 180px;
+}
 
 .name-logo{
   display: flex;
@@ -199,22 +213,15 @@ body {
   width: 508px;
 }
 
-.logo-greencodes{
-  background-image: url("../home1/images/greencodes.png");
-  
-  width: 60px;
-  height: 60px;
-  background-size: cover;
-  /* justify-content: center; */
-  /* align-items: center; */
-  margin-left: 70px;
-  border: 1px solid rgb(145, 145, 145);
-}
+
+
+
+
 
 
 .company-name {
   height: 18px;
-  width: 120px;
+  width: 160px;
   font-size: 15px;
   margin: 0 12px 0 0;
   /* font-weight: normal; */
@@ -234,11 +241,12 @@ body {
   background-color: rgb(226, 225, 225);
   /* width: 700px; */
   width: 750px;
-  height: 800px;
+  height: 1800px;
+  /* border: 1px solid black; */
   border-radius: 20px;
   padding: 24px;
-  margin-top: 100px;
-  margin-left: 130px;
+  margin-top: 20px;
+  margin-left: 180px;
 }
 
 /* table css */
@@ -298,7 +306,7 @@ td {
 
 }
 
-.other-specification p {
+.job-specification p {
   font-size: 16px;
   font-weight: 700;
   margin: 10px 0;
@@ -326,6 +334,40 @@ td {
   padding: 10px;
 }
 
+.job-summary{
+  margin-top: 10px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.job-summary p{
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.summary {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.job-responsibilities{
+  margin-top: 10px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.job-responsibilities p{
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.responsibilities {
+  margin-top: 10px;
+  padding: 10px;
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -345,9 +387,7 @@ td {
   width: 130px;
   align-self: center;
 }
-.btn a {
-  text-decoration: none;
-}
+
 .btn:hover {
   cursor: pointer;
   background: #8d7ff4;
@@ -371,7 +411,6 @@ td {
   flex-direction: column;
   /* align-items: center; */
 }
-
 hr{
   margin-bottom: 10px;
 }
@@ -413,32 +452,12 @@ hr{
 
 
 .axis-logo{
-      
-  background-image: url('../home1/images/axissoftware.jpg');
-} 
-.logo-aulogic{
-  
-      background-image: url('../home1/images/aayulogic.jpg');
-
-}
-.logo-gtech {
-  
-  background-image: url('../home1/images/greencodes.png');
-
-}
-.logo-sabkura{
- 
-  background-image: url('../home1/images/sabkura.jpg');
-
-}
-.logo-unicorn{
-  
-  background-image: url('../home1/images/unicorn.jpg');
-}
-.logo-ghargharma{
-  
-  background-image: url('../home1/images/ghargharma.jpg');
-
+      width: 60px;
+      height: 60px;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgb(145, 145, 145);
 }
 
 .btn-seemore{

@@ -50,17 +50,19 @@ class Job_information1(models.Model):
 
 
 
-# class save_form(models.Model):
-#     phone=models.IntegerField()
+class save_form(models.Model):
+    phone=models.IntegerField()
 
-#     state=models.CharField(max_length=100)
+    state=models.CharField(max_length=100)
 
-#     city=models.CharField(max_length=100)
+    city=models.CharField(max_length=100)
 
-#     zipcode=models.CharField(max_length=100)
-#     Qualification=models.CharField(max_length=100)
-#     Experience=models.CharField(max_length=100)
+    zipcode=models.CharField(max_length=100)
+    Qualification=models.CharField(max_length=100)
+    Experience=models.CharField(max_length=100)
    
+   
+
    
 
 class contactus(models.Model):
@@ -72,11 +74,14 @@ class contactus(models.Model):
 
 
 
-class Jobshow(models.Model):
-    
-    Job_Title=models.CharField(max_length=100)
+class addjobs(models.Model):
+  jname=models.CharField(max_length=100)
+  jcompany=models.CharField(max_length=100,default="")
+  jdescription = models.CharField(max_length=500)
+  jimage=models.ImageField(upload_to="home1/allimages",default="")
 
-    Job_Description=models.CharField(max_length=100)
+  def __str__(self):
+    return str(self.jname)
       
   
     
